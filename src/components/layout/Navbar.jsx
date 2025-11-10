@@ -16,7 +16,7 @@ const Navbar = () => {
   const btnNameTwo = "Sign up";
 
   return (
-    <div className="sticky top-0 z-50 border-b border-neutral-600 py-4 px-8 backdrop-blur-md bg-neutral-100/10 ">
+    <div className="sticky top-0 z-50 border-b border-neutral-300 py-4 px-8 backdrop-blur-md bg-neutral-100/10 ">
       <div className="flex  rounded-full justify-between items-center max-w-7xl mx-auto ">
         <h1 className="font-bold uppercase text-3xl tracking-wide cursor-pointer text-neutral-700">
           Chef

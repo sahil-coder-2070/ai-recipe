@@ -18,7 +18,9 @@ const Home = () => {
   //               <ButtonTwo btnname={btnNameTwo} />
   return (
     <div className="h-screen  ">
-      <div className="h-full flex flex-col gap-6 items-center justify-center max-w-6xl mx-auto px-4">
+      <div className="h-full flex flex-col gap-6 items-center justify-center max-w-6xl mx-auto px-4 relative">
+        <div className="absolute top-20 -left-25 h-full w-full bg-[url('https://png.pngtree.com/png-vector/20250728/ourmid/pngtree-testy-fast-food-burger-png-image_16906169.webp')] bg-no-repeat "></div>
+        
         {/* Badge */}
         <span className=" inline-flex animate-fade-in-down items-center px-6 py-2.5 rounded-full bg-orange-50 text-[#F83002] text-lg font-semibold shadow-sm border border-orange-100">
           <CookingPot size={20} className="mr-2" />
