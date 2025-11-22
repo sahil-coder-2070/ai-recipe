@@ -2,6 +2,7 @@ import { MenuIcon, X } from "lucide-react";
 import { useState } from "react";
 import { motion } from "motion/react";
 import Button from "../ui/Button";
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -28,7 +29,7 @@ const Navbar = () => {
               key={index}
               className="hover:text-neutral-400 cursor-pointer hover:-translate-y-0.75 transition-transform duration-200"
             >
-              <a href={link.href}>{link.name}</a>
+              <Link to={link.href}>{link.name}</Link>
             </li>
           ))}
         </div>

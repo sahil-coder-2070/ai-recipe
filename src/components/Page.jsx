@@ -5,7 +5,6 @@ import CardSection from './section2/CardSection'
 const Page = () => {
   return (
     <div className=''>
-        <Navbar />
         <Home />
         <CardSection />
     </div>
