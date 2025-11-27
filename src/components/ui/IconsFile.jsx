@@ -6,7 +6,7 @@ const IconsFile = () => {
 
 export default IconsFile;
 
-export const SahilBrifCase = () => {
+export const BrifCaseIconLogo = () => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -32,7 +32,7 @@ export const SahilBrifCase = () => {
   );
 };
 
-export const SahilSart = () => {
+export const StartLogoIcon = () => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
