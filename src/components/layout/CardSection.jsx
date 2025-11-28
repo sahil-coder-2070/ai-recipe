@@ -39,13 +39,28 @@ const CardSection = () => {
   return (
     <div className="h-full relative mb-10">
       {loading ? (
-        <div className="flex w-full h-full items-center justify-center">
+        <div className="flex flex-col w-full min-h-280 items-center justify-center">
+          <div className="w-full flex flex-col justify-center items-center mb-10 gap-3 ">
+            <h1 className="text-2xl md:text-7xl font-medium tracking-tight animate-fade-in-up text-center font-display ">
+              Featured Recipes
+            </h1>
+            <p className="text-neutral-600 text-base">
+              Handpicked delicious recipes to inspire your next meal
+            </p>
+          </div>
           <MainLoader size={50} />
         </div>
       ) : (
         <>
-          {/* GRID */}
-          <div className="grid sm:grid-cols-3 gap-6 justify-items-center items-start max-w-6xl m-auto">
+          <div className="w-full flex flex-col justify-center items-center mb-20 gap-3 ">
+            <h1 className="text-2xl md:text-7xl font-medium tracking-tight animate-fade-in-up text-center font-display ">
+              Featured Recipes
+            </h1>
+            <p className="text-neutral-600 text-base">
+              Handpicked delicious recipes to inspire your next meal
+            </p>
+          </div>
+          <div className="grid sm:grid-cols-3 gap-5 justify-items-center items-start max-w-6xl m-auto mb-20 ">
             {imgUrl.map((meal, index) => (
               <motion.div
                 key={meal.idMeal}
@@ -56,12 +71,17 @@ const CardSection = () => {
                   delay: index * 0.05,
                 }}
                 onClick={() => handleClick(meal)}
-                className="hover:bg-neutral-100/50 duration-200 flex flex-col gap-6 justify-center items-center rounded-2xl h-fit p-5 cursor-pointer"
+                className="bg-white duration-200 flex flex-col gap-6 justify-center items-center rounded-2xl h-full p-5 cursor-pointer shadow-sm border-neutral-200 border"
               >
-                <img src={meal.strMealThumb} className="w-80 rounded-2xl" />
-                <h2 className="font-semibold text-neutral-800 text-base text-center">
+                <img
+                  src={meal.strMealThumb}
+                  className="w-80 rounded-2xl shadow-sm "
+                />
+                <h2 className="font-semibold text-neutral-900 text-base text-start w-full text-[16px]">
                   {meal.strMeal}
-                  <p className="text-neutral-600 text-sm">{meal.strCategory}</p>
+                  <p className="font-normal text-neutral-500 text-sm">
+                    {meal.strCategory}
+                  </p>
                 </h2>
               </motion.div>
             ))}
@@ -97,7 +117,7 @@ const CardSection = () => {
                       initial={{ paddingLeft: "50px", opacity: 0 }}
                       animate={{ paddingLeft: "0px", opacity: 1 }}
                       transition={{ duration: 0.35, ease: [0.42, 0, 0.58, 1] }}
-                      className="font-semibold text-neutral-800 text-base "
+                      className="font-semibold text-neutral-800 text-base  "
                     >
                       {activeMeal.strMeal}
                       <p className="text-base font-normal text-neutral-600">
