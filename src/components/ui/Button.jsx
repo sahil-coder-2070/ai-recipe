@@ -1,6 +1,11 @@
-const Button = ({ btnname }) => {
+import React from "react";
+
+const Button = ({ btnname, cn, e }) => {
   return (
-    <button className=" cursor-pointer hover:-translate-y-0.75 transition-transform duration-200 bg-neutral-900 rounded-full text-neutral-100 text-sm sm:text-base  shadow-neutral-400 shadow-md py-2 px-6  border-neutral-400  border">
+    <button
+      onClick={e}
+      className={`cursor-pointer hover:scale-95 transition-transform duration-200 bg-linear-to-bl bg-orange-400 via-orange-500 to-orange-600 rounded-full text-neutral-100 font-medium  shadow-neutral-300 shadow-md  border-neutral-300 border text-shadow-sm ${cn}`}
+    >
       {btnname}
     </button>
   );

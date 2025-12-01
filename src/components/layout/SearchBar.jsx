@@ -26,7 +26,6 @@ const SearchBar = () => {
             Search
           </button>
         </div>
-
         <div className="mt-8 flex flex-wrap justify-center gap-3">
           {[
             "Italian",

@@ -3,12 +3,14 @@ import { useState } from "react";
 import { AnimatePresence, motion } from "motion/react";
 import Button from "../ui/Button";
 import { Link } from "react-router-dom";
+import Auth from "./Auth";
 
 const MotionSpan = motion.span;
 const MotionDiv = motion.div;
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const OpenAuth = () => <Auth />;
 
   const links = [
     { name: "Home", href: "/" },
@@ -75,9 +77,12 @@ const Navbar = () => {
         </div>
         <div className="hidden sm:flex gap-5">
           <button>Login</button>
-          <Button btnname={btnNameTwo} cn={"text-sm sm:text-base py-1 px-6"} />
+          <Button
+            onClick={OpenAuth}
+            btnname={btnNameTwo}
+            cn={"text-sm sm:text-base py-1 px-6"}
+          />
         </div>
-        {/* Mobile Menu Button */}
         <button
           onClick={() => setIsOpen(!isOpen)}
           className="sm:hidden text-neutral-900"

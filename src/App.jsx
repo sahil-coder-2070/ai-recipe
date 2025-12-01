@@ -4,6 +4,8 @@ import Recipe from "./components/pages/Recipe";
 import About from "./components/pages/About";
 import Home from "./components/pages/Home";
 import Footer from "./components/layout/Footer";
+import Auth from "./components/layout/Auth";
+import DeatilRecipe from "./components/pages/DeatilRecipe";
 
 const App = () => {
   return (
@@ -13,6 +15,8 @@ const App = () => {
         <Route path="/" element={<Home />} />
         <Route path="/recipe" element={<Recipe />} />
         <Route path="/about" element={<About />} />
+        <Route path="/auth" element={<Auth />} />
+        <Route path="/recipe/:recipeId" element={<DeatilRecipe />} />
       </Routes>
       <Footer />
     </div>
