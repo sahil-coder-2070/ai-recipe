@@ -6,6 +6,7 @@ import Home from "./components/pages/Home";
 import Footer from "./components/layout/Footer";
 import Auth from "./components/layout/Auth";
 import DeatilRecipe from "./components/pages/DeatilRecipe";
+import AiRecipe from "./components/pages/AiRecipe";
 
 const App = () => {
   return (
@@ -17,6 +18,7 @@ const App = () => {
         <Route path="/about" element={<About />} />
         <Route path="/auth" element={<Auth />} />
         <Route path="/recipe/:recipeId" element={<DeatilRecipe />} />
+        <Route path="/airecipe" element={<AiRecipe />} />
       </Routes>
       <Footer />
     </div>
