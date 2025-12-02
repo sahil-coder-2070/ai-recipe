@@ -33,11 +33,7 @@ const Testimonials = () => {
       <section className="py-20 px-6 bg-linear-to-b from-green-50 to-orange-50">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
-<<<<<<< HEAD
-            <h1 className="text-4xl md:text-6xl font-medium tracking-tight animate-fade-in-up text-center font-display w-full mb4">
-=======
             <h1 className="text-4xl md:text-6xl font-medium tracking-tight animate-fade-in-up text-center font-display w-full mb-4">
->>>>>>> 566bf265c659e463d679a71b65059df4c7c990a3
               Loved by Home Cooks
             </h1>
 
