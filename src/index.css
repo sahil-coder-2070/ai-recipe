@@ -1,5 +1,7 @@
 @import url('https://fonts.cdnfonts.com/css/tt-ramillas-trl');
+/* TT Ramillas */
 @import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap');
+/* Manrope */
 @import "tailwindcss";
 @import "tw-animate-css";
 
@@ -7,10 +9,8 @@
   color-scheme: light;
   color: #000;
   background-color: #ffffff;
-}
-@theme{
-  --font-display : 'TT Ramillas Trl', sans-serif;
-  --font-man : "Manrope", sans-serif;
+  --font-display: 'TT Ramillas Trl', Georgia, serif;
+  --font-man: 'Manrope', Arial, sans-serif;
 }
 
 body {
@@ -20,4 +20,9 @@ body {
 
 h1 {
   font-family: var(--font-display);
+}
+
+
+* {
+  font-display: swap;
 }

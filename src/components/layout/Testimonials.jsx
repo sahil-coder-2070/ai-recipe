@@ -33,9 +33,10 @@ const Testimonials = () => {
       <section className="py-20 px-6 bg-linear-to-b from-green-50 to-orange-50">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
-            <h2 className="font-display text-3xl md:text-6xl font-bold text-gray-900 mb-4 text-center">
+            <h1 className="text-4xl md:text-6xl font-medium tracking-tight animate-fade-in-up text-center font-display w-full mb-4">
               Loved by Home Cooks
-            </h2>
+            </h1>
+
             <p className="text-neutral-600 text-base md:text-lg  max-w-69 text-center md:w-full m-auto">
               See how ChefAI is changing the way people cook
             </p>
