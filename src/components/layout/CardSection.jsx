@@ -37,14 +37,14 @@ const CardSection = () => {
   }, []);
 
   return (
-    <div className="h-full relative ">
+    <div className="h-full relative bg-linear-to-t from-white to-green-50 ">
       {loading ? (
-        <div className="flex flex-col w-full min-h-280 items-center justify-center">
-          <div className="w-full flex flex-col justify-center items-center mb-10 gap-3 ">
-            <h1 className="text-3xl md:text-7xl font-medium tracking-tight animate-fade-in-up text-center font-display ">
+        <div className="flex flex-col w-full min-h-280 items-center justify-center relative">
+          <div className="w-full flex flex-col justify-center items-center mb-10 gap-3 absolute top-0 ">
+            <h1 className="text-5xl md:text-6xl font-medium tracking-tight animate-fade-in-up text-center font-display ">
               Featured Recipes
             </h1>
-            <p className="text-neutral-600 text-base text-center">
+            <p className="text-neutral-600 text-base max-w-xs text-center md:w-full">
               Handpicked delicious recipes to inspire your next meal
             </p>
           </div>
@@ -52,15 +52,15 @@ const CardSection = () => {
         </div>
       ) : (
         <>
-          <div className="w-full flex flex-col justify-center items-center md:mb-20 gap-3 ">
-            <h1 className="text-3xl md:text-7xl font-medium tracking-tight animate-fade-in-up text-center font-display ">
+          <div className="w-full flex flex-col justify-center items-center mb-20 gap-3 ">
+            <h1 className="text-5xl md:text-7xl font-medium tracking-tight animate-fade-in-up text-center font-display ">
               Featured Recipes
             </h1>
-            <p className="text-neutral-600 text-xs max-w-50 md:max-w-full md:text-base text-center">
+            <p className="text-neutral-600 text-base md:text-lg  max-w-xs text-center md:w-full">
               Handpicked delicious recipes to inspire your next meal
             </p>
           </div>
-          <div className="grid grid-cols-2 sm:grid-cols-3 gap-5 justify-items-center items-start max-w-6xl m-auto md:mb-20 p-4 md:p-1">
+          <div className="grid  sm:grid-cols-3 gap-5 justify-items-center items-start md:max-w-6xl m-auto mb-20 px-6 md:px-0.5  ">
             {imgUrl.map((meal, index) => (
               <motion.div
                 key={meal.idMeal}
@@ -70,22 +70,22 @@ const CardSection = () => {
                   duration: 0.2,
                   delay: index * 0.09,
                 }}
-                layoutId={`card-container-${meal.idMeal}`} 
+                layoutId={`card-container-${meal.idMeal}`}
                 onClick={() => handleClick(meal)}
                 className="bg-white flex flex-col gap-6 justify-center items-center rounded-2xl h-full  cursor-pointer shadow-sm border-neutral-200 border overflow-hidden"
               >
                 <motion.img
-                  layoutId={`card-image-${meal.idMeal}`} 
+                  layoutId={`card-image-${meal.idMeal}`}
                   src={meal.strMealThumb}
-                  className="w-full   shadow-sm object-cover"
+                  className="w-full h-90 md:h-full shadow-sm object-cover"
                 />
                 <motion.div
                   layoutId={`card-body-${meal.idMeal}`}
-                  className="w-full pt-0 p-2 md:p-5 flex-1"
+                  className="w-full pt-0 p-5"
                 >
-                  <h2 className="font-semibold text-neutral-900 md:text-base text-sm text-center">
+                  <h2 className="font-semibold text-neutral-900 text-base">
                     {meal.strMeal}
-                    <p className="font-normal text-neutral-500 md:text-sm text-xs">
+                    <p className="font-normal text-neutral-500 text-sm">
                       {meal.strCategory}
                     </p>
                   </h2>

@@ -58,17 +58,19 @@ const DetailRecipe = () => {
       ) : (
         <>
           <div className="min-h-screen max-w-6xl m-auto">
-            <div className="mt-10 flex gap-6">
-              <div className="p-3 shadow-sm rounded-2xl bg-neutral-100 h-120 max-h-107 min-w-100 border border-neutral-200 object-cover">
+            <div className="mt-10 flex flex-col md:flex-row gap-6">
+              <div className="m-8 md:m-0 p-3 shadow-sm rounded-2xl bg-neutral-100  md:h-120 md:max-h-107 md:min-w-100 border border-neutral-200 object-cover">
                 <img
                   src={meal.strMealThumb}
                   alt="Food Image"
-                  className="h-100 shadow-sm rounded-2xl object-cover"
+                  className="  md:h-100 shadow-sm rounded-2xl object-cover"
                 />
               </div>
-              <div className="w-full p-4 flex flex-col">
-                <h1 className="text-5xl">{meal.strMeal} </h1>
-                <div className="flex gap-4 mt-4">
+              <div className="w-full p-4 md:p-0flex flex-col">
+                <h1 className="text-5xl text-center md:text-left">
+                  {meal.strMeal}{" "}
+                </h1>
+                <div className="flex gap-4 mt-4 justify-center md:justify-start">
                   <p className="bg-blue-200/80 px-3 py-2 text-xs rounded-2xl">
                     {meal.strCategory}{" "}
                   </p>
@@ -79,7 +81,7 @@ const DetailRecipe = () => {
                 <div className="p-3">
                   <ul className="list-disc ml-5 mt-2">
                     {ingredients.map((item, idx) => (
-                      <li key={idx} className="text-sm text-neutral-700">
+                      <li key={idx} className="text-base text-neutral-600">
                         {item.ingredient} — {item.measure}
                       </li>
                     ))}
@@ -92,14 +94,17 @@ const DetailRecipe = () => {
                 <h1 className="text-5xl">Steps</h1>
                 <div className="p-3">
                   {instructions.split("\r\n").map((line, index) => (
-                    <p key={index} className="text-[14px] text-neutral-600">
+                    <p
+                      key={index}
+                      className="text-base md:text-lg text-neutral-500 font-medium"
+                    >
                       {line}
                     </p>
                   ))}
                 </div>
               </div>
               <h1 className="text-5xl ">YouTube Video</h1>
-              <div className="p-3 shadow-sm rounded-2xl bg-neutral-100  h-fit min-w-100 border border-neutral-200 max-w-2xl text-center mb-20">
+              <div className="m-10 p-3 shadow-sm rounded-2xl bg-neutral-100  h-fit min-w-100 border border-neutral-200 max-w-2xl text-center mb-20">
                 <a
                   href={meal.strYoutube}
                   target="_blank"

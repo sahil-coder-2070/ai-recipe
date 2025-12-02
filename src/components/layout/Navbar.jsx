@@ -1,7 +1,7 @@
 import { MenuIcon, X } from "lucide-react";
 import { useState } from "react";
 import { AnimatePresence, motion } from "motion/react";
-import Button from "../ui/Button";
+import { LoginBtn } from "../ui/Button";
 import { Link } from "react-router-dom";
 
 const MotionSpan = motion.span;
@@ -12,31 +12,30 @@ const Navbar = () => {
 
   const links = [
     { name: "Home", href: "/" },
-    { name: "Recipes", href: "/Recipe" },
-    { name: "Ai", href: "/airecipe" },
-    { name: "Auth", href: "/auth" },
+    { name: "Recipes", href: "/recipe" },
+    { name: "AI Bot", href: "/airecipe" },
   ];
 
   const [hoverd, setHoverd] = useState(null);
 
-  const btnNameTwo = "Sign up";
   return (
     <div className="sticky top-0 z-50 border-b border-neutral-300 py-4 px-8 backdrop-blur-md bg-neutral-100/30 ">
       <div className="flex  rounded-full justify-between items-center max-w-6xl mx-auto ">
         <div className="flex items-center gap-2">
-          <a href="/">
+          <Link to="/">
+
             <img
-              src="../src/assets/logo.png"
+              src="https://raw.githubusercontent.com/sahilsaraearth-svg/recipewala/8d1fc62eede659f9cf5e57c8921d6572b22e3f45/public/logo.svg"
               alt="logo"
-              className="h-10 w-10 cursor-pointer"
+              className="h-10 w-12 cursor-pointer"
             />
-          </a>
-          <a
-            href="/"
+          </Link>
+          <Link
+            to="/"
             className="font-bold capitalize text-3xl tracking-wide cursor-pointer text-neutral-700 font-display"
           >
-            Ai??
-          </a>
+            Chefy AI
+          </Link>
         </div>
 
         {/* Desktop Menu */}
@@ -75,8 +74,7 @@ const Navbar = () => {
           </nav>
         </div>
         <div className="hidden sm:flex gap-5">
-          <button>Login</button>
-          <Button btnname={btnNameTwo} cn={"text-sm sm:text-base py-1 px-6"} />
+          <LoginBtn />
         </div>
         <button
           onClick={() => setIsOpen(!isOpen)}
@@ -108,17 +106,11 @@ const Navbar = () => {
                   }}
                   className="hover:text-neutral-600 cursor-pointer text-4xl text-left "
                 >
-                  <a href={link.href}>{link.name}</a>
+                  <Link to={link.href}>{link.name}</Link>
                 </motion.li>
               ))}
               <div className="flex flex-col gap-5">
-                <button className="px-5 py-1.5 text-base bg-neutral-200/40 rounded-full shadow-sm border-neutral-200 border">
-                  Login
-                </button>
-                <Button
-                  btnname={btnNameTwo}
-                  cn={"text-sm sm:text-base py-1.5 px-4"}
-                />
+                <LoginBtn />
               </div>
             </div>
           </div>

@@ -29,50 +29,54 @@ const testimonials = [
 
 const Testimonials = () => {
   return (
-    <section className="py-20 px-6 bg-linear-to-b from-green-50 to-orange-50">
-      <div className="max-w-6xl mx-auto">
-        <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-7xl font-medium tracking-tight animate-fade-in-up text-center font-display ">
-            Loved by Home Cooks
-          </h2>
-          <p className="text-neutral-600 text-xs max-w-50 md:max-w-full md:text-base text-center">
-            See how ChefAI is changing the way people cook
-          </p>
-        </div>
+    <>
+      <section className="py-20 px-6 bg-linear-to-b from-green-50 to-orange-50">
+        <div className="max-w-6xl mx-auto">
+          <div className="text-center mb-16">
+            <h2 className="font-display text-3xl md:text-6xl font-bold text-gray-900 mb-4 text-center">
+              Loved by Home Cooks
+            </h2>
+            <p className="text-neutral-600 text-base md:text-lg  max-w-69 text-center md:w-full m-auto">
+              See how ChefAI is changing the way people cook
+            </p>
+          </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {testimonials.map((testimonial, index) => (
-            <div
-              key={index}
-              className="bg-white p-8 rounded-2xl shadow-sm border-neutral-200 border hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2"
-            >
-              <div className="flex gap-1 mb-6">
-                {[...Array(5)].map((_, i) => (
-                  <Star
-                    key={i}
-                    className="w-5 h-5 fill-orange-400 text-orange-400"
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {testimonials.map((testimonial, index) => (
+              <div
+                key={index}
+                className="bg-white p-8 rounded-2xl shadow-sm border-neutral-200 border hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2"
+              >
+                <div className="flex gap-1 mb-6">
+                  {[...Array(5)].map((_, i) => (
+                    <Star
+                      key={i}
+                      className="w-5 h-5 fill-orange-400 text-orange-400"
+                    />
+                  ))}
+                </div>
+                <p className="text-gray-700 mb-6 leading-relaxed italic">
+                  "{testimonial.quote}"
+                </p>
+                <div className="flex items-center gap-4">
+                  <img
+                    src={testimonial.image}
+                    alt={testimonial.name}
+                    className="w-12 h-12 rounded-full object-cover"
                   />
-                ))}
-              </div>
-              <p className="text-gray-700 mb-6 leading-relaxed italic">
-                "{testimonial.quote}"
-              </p>
-              <div className="flex items-center gap-4">
-                <img
-                  src={testimonial.image}
-                  alt={testimonial.name}
-                  className="w-12 h-12 rounded-full object-cover"
-                />
-                <div>
-                  <p className="font-bold text-gray-900">{testimonial.name}</p>
-                  <p className="text-sm text-gray-600">{testimonial.role}</p>
+                  <div>
+                    <p className="font-bold text-gray-900">
+                      {testimonial.name}
+                    </p>
+                    <p className="text-sm text-gray-600">{testimonial.role}</p>
+                  </div>
                 </div>
               </div>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
+    </>
   );
 };
 

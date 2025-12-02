@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from "react";
-
+import { usePuterStore } from "../../lib/puter";
 const AiRecipe = () => {
   const [messages, setMessages] = useState([
     {
@@ -74,12 +74,22 @@ const AiRecipe = () => {
     }
   };
 
+  const { auth, checkAuthStatus } = usePuterStore();
+  useEffect(() => {
+    checkAuthStatus();
+  }, []);
+
   return (
     <div className="min-h-screen max-w-4xl m-auto p-3">
-      <div className="flex flex-col shadow-sm min-h-[80vh] md:min-h-[85vh] overflow-x-auto p-3 rounded-2xl bg-neutral-50 border-neutral-200 border items-center gap-5">
+      <div className="flex flex-col shadow-sm min-h-[80vh] max-h-96 mt-5 md:mt-0 md:min-h-[85vh] overflow-x-auto p-3 rounded-2xl bg-neutral-50 border-neutral-200 border items-center gap-5">
         <div className="w-full flex justify-center items-center pb-3 gap-3 border-b border-neutral-200">
-          <h1 className="text-2xl md:text-xl font-medium tracking-tight text-center font-display flex-1 ">
+          <h1 className="text-2xl md:text-xl font-medium tracking-tight text-center font-display flex-1 flex flex-col">
             Chefy AI
+            {!auth.isAuthenticated && (
+              <p className="text-xs md:text-sm font-man font-normal tracking-tight text-center text-red-500">
+                Login To You use AI !!
+              </p>
+            )}
           </h1>
           <div
             className={`px-4 py-1.5 rounded-full text-xs w-fit  ${
@@ -109,7 +119,7 @@ const AiRecipe = () => {
                 className={`p-3 m-2 rounded-2xl max-w-xs text-wrap ${
                   isUser
                     ? "bg-neutral-200/40 w-fit ml-auto text-right border border-neutral-100 shadow-neutral-400 shadow-xs px-5 py-1 text-sm"
-                    : " min-w-xl mr-auto text-left px-5 py-1 text-sm"
+                    : "ml-0  md:min-w-xl mr-auto text-left md:px-5 md:py-1 text-sm "
                 }`}
               >
                 <div className="whitespace-pre-wrap">{msg.content}</div>
@@ -125,26 +135,38 @@ const AiRecipe = () => {
             </div>
           )}
         </div>
-        <div className="flex flex-col sm:flex-row gap-3 bg-white shadow-sm border border-neutral-200 w-full max-w-xl py-1.5 px-5 rounded-full">
+        <div className="flex  sm:flex-row gap-3 bg-white shadow-sm border border-neutral-200 w-full max-w-xl py-1.5 px-5 rounded-full">
           <input
-            className="focus:outline-none focus:ring-0 w-full"
+            className={
+              !auth.isAuthenticated
+                ? "focus:outline-none focus:ring-0 w-full placeholder-red-500 cursor-not-allowed"
+                : "focus:outline-none focus:ring-0 w-full "
+            }
             type="text"
             value={inputValue}
             onChange={(e) => setInputValue(e.target.value)}
             onKeyDown={handleKeyPress}
             placeholder={
-              aiReady ? "Type Your Recipe" : "Wait for ai to be ready"
+              !auth.isAuthenticated
+                ? "Login to type your recipe"
+                : aiReady
+                ? "Type Your Recipe"
+                : "Wait for ai to be ready"
             }
-            disabled={!aiReady || isLoading}
+            disabled={!aiReady || isLoading || !auth.isAuthenticated}
           />
           <button
             onClick={sendMessage}
-            className={`cursor-pointer hover:scale-95 transition-transform duration-200 bg-orange-600 rounded-full text-neutral-100 font-medium shadow-neutral-300 shadow-md border-neutral-300 border py-1.5 px-5`}
+            className={
+              !auth.isAuthenticated
+                ? "cursor-not-allowed hover:scale-95 transition-transform duration-200 bg-orange-600/70 rounded-full text-neutral-100 font-medium shadow-neutral-300 shadow-md border-neutral-300 border py-1.5 px-5"
+                : `cursor-pointer hover:scale-95 transition-transform duration-200 bg-orange-600 rounded-full text-neutral-100 font-medium shadow-neutral-300 shadow-md border-neutral-300 border py-1.5 px-5`
+            }
             disabled={!aiReady || isLoading || !inputValue.trim()}
           >
             {isLoading ? (
               <div className="flex items-center gap-2">
-                <div className="animate-spin w-4 h-4 border-2 border-black/30 border-t-black rounded-full"></div>
+                <div className="animate-spin w-4 h-4 border-2 border-neutral-200/30 border-t-white rounded-full"></div>
                 <p>Sending</p>
               </div>
             ) : (
