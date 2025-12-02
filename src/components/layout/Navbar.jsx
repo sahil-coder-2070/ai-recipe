@@ -3,19 +3,18 @@ import { useState } from "react";
 import { AnimatePresence, motion } from "motion/react";
 import Button from "../ui/Button";
 import { Link } from "react-router-dom";
-import Auth from "./Auth";
 
 const MotionSpan = motion.span;
 const MotionDiv = motion.div;
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const OpenAuth = () => <Auth />;
 
   const links = [
     { name: "Home", href: "/" },
     { name: "Recipes", href: "/Recipe" },
-    { name: "About", href: "/About" },
+    { name: "Ai", href: "/airecipe" },
+    { name: "Auth", href: "/auth" },
   ];
 
   const [hoverd, setHoverd] = useState(null);
@@ -77,11 +76,7 @@ const Navbar = () => {
         </div>
         <div className="hidden sm:flex gap-5">
           <button>Login</button>
-          <Button
-            onClick={OpenAuth}
-            btnname={btnNameTwo}
-            cn={"text-sm sm:text-base py-1 px-6"}
-          />
+          <Button btnname={btnNameTwo} cn={"text-sm sm:text-base py-1 px-6"} />
         </div>
         <button
           onClick={() => setIsOpen(!isOpen)}
@@ -117,8 +112,13 @@ const Navbar = () => {
                 </motion.li>
               ))}
               <div className="flex flex-col gap-5">
-                <button className="px-5 py-1.5 text-base bg-neutral-200/40 rounded-full shadow-sm border-neutral-200 border">Login</button>
-                <Button btnname={btnNameTwo} cn={"text-sm sm:text-base py-1.5 px-4"} />
+                <button className="px-5 py-1.5 text-base bg-neutral-200/40 rounded-full shadow-sm border-neutral-200 border">
+                  Login
+                </button>
+                <Button
+                  btnname={btnNameTwo}
+                  cn={"text-sm sm:text-base py-1.5 px-4"}
+                />
               </div>
             </div>
           </div>
