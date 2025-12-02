@@ -5,10 +5,10 @@ const SearchBar = () => {
     <section className="py-20 px-6 bg-linear-to-b from-white to-green-50">
       <div className="max-w-4xl mx-auto">
         <div className="text-center mb-10">
-          <h2 className=" font-display text-4xl md:text-6xl font-bold text-gray-900 mb-4">
+          <h2 className=" text-3xl md:text-7xl font-medium tracking-tight animate-fade-in-up text-center font-display ">
             Find Your Perfect Recipe
           </h2>
-          <p className="text-neutral-600 text-base">
+          <p className="text-neutral-600 text-xs max-w-50 md:max-w-full md:text-base text-center">
             Search thousands of recipes by ingredients, cuisine, or dish name
           </p>
         </div>

@@ -99,26 +99,26 @@ const Navbar = () => {
               onClick={() => setIsOpen(false)}
             />
 
-            <div className="flex flex-col items-center justify-center gap-6 w-full list-none text-neutral-800 p-4">
+            <div className="flex flex-col items-start justify-center gap-6 w-full list-none text-neutral-800 p-4 max-w-2xs pl-20">
               {links.map((link, index) => (
                 <motion.li
                   key={index}
                   initial={{ opacity: 0, y: 30 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{
-                    delay: index * 0.2, // stagger each li
+                    delay: index * 0.2,
                     duration: 0.2,
                     type: "spring",
                     stiffness: 100,
                   }}
-                  className="hover:text-neutral-200 cursor-pointer text-4xl"
+                  className="hover:text-neutral-600 cursor-pointer text-4xl text-left "
                 >
                   <a href={link.href}>{link.name}</a>
                 </motion.li>
               ))}
-              <div className="flex  gap-5">
-                <button>Login</button>
-                <Button btnname={btnNameTwo} cn={"text-sm sm:text-base"} />
+              <div className="flex flex-col gap-5">
+                <button className="px-5 py-1.5 text-base bg-neutral-200/40 rounded-full shadow-sm border-neutral-200 border">Login</button>
+                <Button btnname={btnNameTwo} cn={"text-sm sm:text-base py-1.5 px-4"} />
               </div>
             </div>
           </div>

@@ -28,14 +28,14 @@ const Feature = () => {
   return (
     <div className="max-w-6xl m-auto mb-20">
       <div className="w-full flex flex-col justify-center items-center mt-50 mb-20 gap-3 ">
-        <h1 className="text-2xl md:text-6xl font-medium tracking-tight animate-fade-in-up text-center font-display ">
+        <h1 className="text-3xl md:text-7xl font-medium tracking-tight animate-fade-in-up text-center font-display  ">
           How AI Helps You Cook
         </h1>
-        <p className="text-neutral-600 text-base">
+        <p className="text-neutral-600 text-xs max-w-50 md:max-w-full md:text-base text-center">
           Your intelligent cooking companion for every step of the journey
         </p>
       </div>
-      <div className="grid grid-cols-3 justify-items-center items-center">
+      <div className="grid md:grid-cols-3 justify-items-center items-center gap-4">
         {features.map((feature, index) => {
           return (
             <MotionDiv
@@ -46,13 +46,13 @@ const Feature = () => {
                 duration: 0.2,
                 delay: index * 0.09,
               }}
-              className=" bg-white duration-200 flex flex-col gap-6 justify-around items-start rounded-2xl h-80 w-85 p-10 cursor-pointer shadow-sm border-neutral-200 border  hover:shadow-2xl "
+              className=" bg-white duration-200 flex flex-col gap-4 md:gap-6 justify-around items-start rounded-2xl md:h-80 w-85 p-10 cursor-pointer shadow-sm border-neutral-200 border  hover:shadow-2xl "
             >
               <span className="bg-linear-to-br from-orange-400 to-orange-600 p-4 shadow-lg rounded-2xl ">
-                <feature.icon className="w-8 h-8 text-white" />
+                <feature.icon className="w-3 md:w-8 h-8 text-white" />
               </span>
-              <h2 className="font-bold font-man text-lg">{feature.title}</h2>
-              <p className="text-neutral-600 text-sm">{feature.description}</p>
+              <h2 className="font-bold font-man text-sm md:text-lg">{feature.title}</h2>
+              <p className="text-neutral-600 text-xs md:text-sm">{feature.description}</p>
             </MotionDiv>
           );
         })}

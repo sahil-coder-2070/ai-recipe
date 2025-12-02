@@ -3,12 +3,11 @@ import ButtonTwo from "../ui/ButtonTwo";
 import Button from "../ui/Button";
 
 const Hero = () => {
-    const btnName = "Get AI Suggestion";
+  const btnName = "Get AI Suggestion";
   const btnNameTwo = "Explore Recipes";
   return (
-    <div className=" h-200 flex flex-col gap-15 items-center justify-center max-w-6xl mx-auto pb-25 relative">
-
-      <h1 className="mt-4 text-3xl md:text-8xl font-medium tracking-tight animate-fade-in-up text-center font-display">
+    <div className=" h-140 md:h-200 flex flex-col gap-15 items-center justify-center md:max-w-6xl mx-auto pb-25 relative">
+      <h1 className="mt-4 text-4xl md:text-8xl font-medium tracking-tight animate-fade-in-up text-center font-display">
         Quick Recipes &amp; <br />
         Better Ways{" "}
         <span className="text-[#F83002] relative">
@@ -35,11 +34,11 @@ const Hero = () => {
       <div className="flex gap-3">
         <Button
           btnname={btnName}
-          cn={"text-sm sm:text-lg py-2 px-10 rounded-full"}
+          cn={"text-xs sm:text-lg py-1.5 px-4 md:py-2 md:px-10 rounded-full"}
         />
         <ButtonTwo
           btnname={btnNameTwo}
-          cn={"text-sm sm:text-lg py-2 px-10 rounded-full bg-neutral-500"}
+          cn={" text-3xl  rounded-full bg-neutral-500"}
         />
       </div>
     </div>
