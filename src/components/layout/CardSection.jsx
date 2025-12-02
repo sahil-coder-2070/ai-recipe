@@ -77,7 +77,6 @@ const CardSection = () => {
                 <motion.img
                   layoutId={`card-image-${meal.idMeal}`}
                   src={meal.strMealThumb}
-                  alt={meal.strTags}
                   className="w-full h-90 md:h-full shadow-sm object-cover"
                 />
                 <motion.div
