@@ -23,7 +23,6 @@ const Navbar = () => {
       <div className="flex  rounded-full justify-between items-center max-w-6xl mx-auto ">
         <div className="flex items-center gap-2">
           <Link to="/">
-
             <img
               src="https://raw.githubusercontent.com/sahilsaraearth-svg/recipewala/8d1fc62eede659f9cf5e57c8921d6572b22e3f45/public/logo.svg"
               alt="logo"
@@ -104,12 +103,17 @@ const Navbar = () => {
                     type: "spring",
                     stiffness: 100,
                   }}
+              onClick={() => setIsOpen(false)}
+
                   className="hover:text-neutral-600 cursor-pointer text-4xl text-left "
                 >
                   <Link to={link.href}>{link.name}</Link>
+                  
                 </motion.li>
               ))}
-              <div className="flex flex-col gap-5">
+              <div 
+              onClick={() => setIsOpen(false)}
+              className="flex flex-col gap-5">
                 <LoginBtn />
               </div>
             </div>

@@ -1,11 +1,10 @@
-import React from "react";
 import { Link } from "react-router-dom";
 
 const Footer = () => {
   const links = [
     { name: "Home", href: "/" },
     { name: "Recipes", href: "/Recipe" },
-    { name: "About", href: "/About" },
+    { name: "AI", href: "/airecipe" },
   ];
   return (
     <div>
