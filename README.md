@@ -1,16 +1,61 @@
-# React + Vite
+#  ChefyAI  
+An AI-powered recipe generator built using **React**, **TailwindCSS**, **Framer Motion**, **Lucide Icons**, and **Puter.js NoSQL DB**.  
+The app lets users generate unique recipes instantly using AI — simple, fast, visually clean.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+🌐 **Live Site:** https://chefyai.vercel.app
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🔥 Features
 
-## React Compiler
+- 🤖 **AI Recipe Generation** using Puter AI API  
+- ⚡ Fast & responsive UI (React + TailwindCSS)  
+- 🎞️ Smooth animations with Framer Motion  
+- 🔎 Clean icons with Lucide  
+- 💾 Puter.js **NoSQL DB** (no backend, no .env required)  
+- 📱 Mobile-friendly, modern UI  
+- 🌍 Hosted on Vercel  
+- 🤝 Open-source & contribution-friendly  
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+---
 
-## Expanding the ESLint configuration
+## 🖼️ Preview
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+> This is preview of chefyai.
+> <a herf="https://chefyai.vercel.app"> 
+<img width="1905" height="979" alt="Screenshot 2025-12-02 215620" src="https://github.com/user-attachments/assets/30385052-2532-4aaf-8cc5-8f7a4d6663e9" />
+</a>
+
+---
+
+## 🛠️ Tech Stack
+
+**Frontend:**  
+- React  
+- TailwindCSS  
+- Framer Motion  
+- Lucide React  
+
+**AI + Database:**  
+- Puter.js API  
+- Puter NoSQL DB (client-side database)
+
+**Build Tool:**  
+- Vite  
+
+**Hosting:**  
+- Vercel  
+
+<p align="center">
+  <img src="https://img.shields.io/badge/React-18.0-blue?logo=react" />
+  <img src="https://img.shields.io/badge/TailwindCSS-3.0-38BDF8?logo=tailwindcss" />
+  <img src="https://img.shields.io/badge/Framer%20Motion-Animation-EF5DA8?logo=framer" />
+  <img src="https://img.shields.io/badge/Lucide-Icons-000000?logo=lucide" />
+  <img src="https://img.shields.io/badge/Puter.js-NoSQL-4ade80" />
+  <img src="https://img.shields.io/badge/Vite-Bundler-646CFF?logo=vite" />
+  <img src="https://img.shields.io/badge/Vercel-Hosted-black?logo=vercel" />
+</p>
+
+---
+
+
