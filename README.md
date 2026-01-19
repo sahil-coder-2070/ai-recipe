@@ -23,7 +23,7 @@ The app lets users generate unique recipes instantly using AI — simple, fast, 
 
 > This is preview of chefyai.
 > <a herf="https://chefyai.vercel.app"> 
-<img width="1905" height="979" alt="Screenshot 2025-12-02 215620" src="https://github.com/user-attachments/assets/30385052-2532-4aaf-8cc5-8f7a4d6663e9" />
+<img width="1905" height="979" alt="Screenshot 2025-12-02 215620" src="https://raw.githubusercontent.com/sahil-coder-2070/ai-recipe/refs/heads/main/public/stage-1768141052622.webp" />
 </a>
 
 ---
